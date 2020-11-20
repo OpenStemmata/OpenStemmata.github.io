@@ -236,19 +236,26 @@
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
 			var data = Object.fromEntries(new FormData(form));
-			output.innerText = `title : '${normalize(data.title)}'
-url: '${data.repoLink}'
-description: '${normalize(data.desc)}'
-language: French
-#other-languages:
-#    - "Optionel"
-time: ${data["date-begin"]}--${data["date-end"]}
-hands: ${data.hands}
-license:
-    - ${data.license}
-format: '${data.format}'
-volume:
-    - {count: "${data.units}", metric: data.metric}
+			output.innerText = `editionType : "${normalize(data.editionType)}"
+editionTitle : "${normalize(data.editionTitle)}"
+editionDate : "${normalize(data.editionDate)}"
+editionPlace : "${normalize(data.editionPlace)}"
+editionColl : "${normalize(data.editionColl)}"
+editionCollNum: "${normalize(data.editionCollNum)}"
+editionStemmaNum: "${normalize(data.editionStemmaNum)}"
+editor : "${normalize(data.editor)}"
+editionPage : "${normalize(data.editionPage)}"
+editionLink : "${normalize(data.editionLink)}"
+workOrigDate : "${normalize(data.workOrigDate)}"
+workOrigPlace : "${normalize(data.workOrigPlace)}"
+workAuthor : "${normalize(data.workAuthor)}"
+workGenre : "${normalize(data.workGenre)}"
+workLangCode : "${normalize(data.workLangCode)}"
+stemmaType : "${normalize(data.stemmaType)}"
+contam : "${normalize(data.contam)}"
+extraStemmContam : "${normalize(data.extraStemmContam)}"
+rootType : "${normalize(data.rootType)}"
+note : "${normalize(data.note)}"
 `;
 		});
 	</script>
