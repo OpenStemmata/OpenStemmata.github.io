@@ -40,71 +40,163 @@
 			<div class="col-12">
 				<form id="generate">
 				  <div class="form-group row">
-				    <label for="title" class="col-sm-2 col-form-label">Titre du projet</label>
+				    <label for="editionType" class="col-sm-2 col-form-label">Edition Type (where the stemma is found)</label>
 				    <div class="col-sm-10">
-				      <input type="text" name="title" class="form-control-plaintext" id="title" placeholder="Titre du projet">
+				      <select name="editionType" id="editionType">
+				        <option value="book">book</option>
+				        <option value="article">article</option>
+				      </select>
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="repoLink" class="col-sm-2 col-form-label">Lien du dépôt du projet</label>
+				    <label for="editionTitle" class="col-sm-2 col-form-label">Edition title</label>
 				    <div class="col-sm-10">
-				      <input type="text" name="repoLink" class="form-control-plaintext" id="repoLink" placeholder="Lien du dépôt du projet">
+				      <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="desc" class="col-sm-2 col-form-label">Courte description</label>
+				    <label for="editionDate" class="col-sm-2 col-form-label">Edition title</label>
 				    <div class="col-sm-10">
-				      <input type="text" name="desc" class="form-control-plaintext" id="desc" placeholder="Description">
+				      <input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="date-begin" class="col-sm-2 col-form-label">Année de début des sources (environ)</label>
+				    <label for="editionPlace" class="col-sm-2 col-form-label">Edition place</label>
 				    <div class="col-sm-10">
-				      <input type="number" name="date-begin" class="form-control-plaintext" id="date-begin" placeholder="Exemple: 1800">
+				      <input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="date-end" class="col-sm-2 col-form-label">Année de fin des sources (environ)</label>
+				    <label for="editionColl" class="col-sm-2 col-form-label">Edition collection</label>
 				    <div class="col-sm-10">
-				      <input type="number" name="date-end" class="form-control-plaintext" id="date-end" placeholder="Exemple: 1948">
+				      <input type="text" name="editionColl" class="form-control-plaintext" id="editionColl" placeholder="Greatest Songs of History">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="hands" class="col-sm-2 col-form-label">Nombre de mains (Environ)</label>
+				    <label for="editionCollNum" class="col-sm-2 col-form-label">Number in collection</label>
 				    <div class="col-sm-10">
-				      <input type="number" name="hands" class="form-control-plaintext" id="hands" placeholder="Exemple: 2">
+				      <input type="number" name="editionCollNum" class="form-control-plaintext" id="editionCollNum" placeholder="13">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="license" class="col-sm-2 col-form-label">Licence</label>
+				    <label for="editionStemmaNum" class="col-sm-2 col-form-label">Stemma number (if more than one in the edition)</label>
 				    <div class="col-sm-10">
-				    	<select name="license" id="license">
-				    		<option value="{name: 'CC-BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/'}">CC-BY 4.0</option>
-				    		<!-- Ajouter d'autres options !-->
-				    	</select>
+				      <input type="number" name="editionStemmaNum" class="form-control-plaintext" id="editionStemmaNum" placeholder="2">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="format" class="col-sm-2 col-form-label">Format des données</label>
+				    <label for="editor" class="col-sm-2 col-form-label">Editor</label>
 				    <div class="col-sm-10">
-				    	<select name="format" id="format">
-				    		<option value="XML-Alto">ALTO XML</option>
-				    		<!-- Ajouter d'autres options !-->
-				    	</select>
+				      <input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E.">
 				    </div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="metric" class="col-sm-2 col-form-label">Nombre (environ) de lignes ou de pages</label>
+				    <label for="editionPage" class="col-sm-2 col-form-label">Page in edition</label>
 				    <div class="col-sm-10">
-				      <input type="number" name="units" class="form-control-plaintext" id="units" placeholder="Exemple: 200">
-				    	<select name="metric" id="metric">
-				    		<option value="lines">Lignes</option>
-				    		<option value="pages">Pages</option>
-				    		<!-- Ajouter d'autres options !-->
-				    	</select>
+				      <input type="number" name="editionPage" class="form-control-plaintext" id="editionPage" placeholder="243">
 				    </div>
 				  </div>
-				  <button class="btn btn-primary u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-2 u-border-grey-75 u-border-hover-palette-4-dark-1 u-btn u-button-style u-palette-4-light-1 u-btn-2" type="submit">Obtenir les métadonnées formattées</button>
+				  <div class="form-group row">
+				    <label for="editionLink" class="col-sm-2 col-form-label">Page in edition</label>
+				    <div class="col-sm-10">
+				      <input type="url" name="editionLink" class="form-control-plaintext" id="editionLink" placeholder="https://archive.org/details/pomesurlagrand00laha/page/n19">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="workOrigDate" class="form-control-plaintext" id="workOrigDate" placeholder="1080-1100">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="workOrigPlace" class="col-sm-2 col-form-label">Work place of origin</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy (Rouen?)">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="workAuthor" class="col-sm-2 col-form-label">Work author</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="workGenre" class="col-sm-2 col-form-label">Work Genre</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="workGenre" class="form-control-plaintext" id="workGenre" placeholder="chanson de geste">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="workLangCode" class="col-sm-2 col-form-label">Work Language Code</label>
+				    <div class="col-sm-10">
+				      <select name="workLangCode" id="workLangCode">
+				        <option value="fro">Old French (fro)</option>
+				        <option value="frm">Middle French (frm)</option>
+				        <option value="gmh">Middle High German (gmh)</option>
+				        <option value="lat">Latin (lat)</option>
+				        <option value="dum">Middle Dutch (dum)</option>
+				        <option value="enm">Middle English (enm)</option>
+				        <option value="wlm">Middle Welsh (wlm)</option>
+				        <option value="osp">Old Castilian (osp)</option>
+				        <option value="pro">(Old) Occitan (pro)</option>
+				        <option value="cat">(Old) Catalan (cat)</option>
+				        <option value="ita">(Old) Italian (ita)</option>
+				        <option value="grc">Greek (grc)</option>
+				        <option value="xxx">other</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="stemmaType" class="col-sm-2 col-form-label">Type of tree: reconstructed (general case) or observed (very rare)</label>
+				    <div class="col-sm-10">
+				      <select name="stemmaType" id="stemmaType">
+				        <option value="reconstructed">reconstructed</option>
+				        <option value="observed">observed</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="contam" class="col-sm-2 col-form-label">Contamination</label>
+				    <div class="col-sm-10">
+				      <select name="contam" id="contam">
+				        <option value="no">no</option>
+				        <option value="yes">yes</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="extraStemmContam" class="col-sm-2 col-form-label">Extra stemmatic contamination (i.e., coming from outside the tree)</label>
+				    <div class="col-sm-10">
+				      <select name="extraStemmContam" id="extraStemmContam">
+				        <option value="no">no</option>
+				        <option value="yes">yes</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="rootType" class="col-sm-2 col-form-label">Root type if specified: original, archetype</label>
+				    <div class="col-sm-10">
+				      <select name="rootType" id="rootType">
+				        <option value="unspecified">unspecified</option>
+				        <option value="archetype">archetype</option>
+				        <option value="original">original</option>
+				      </select>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="note" class="col-sm-2 col-form-label">Note</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="note" class="form-control-plaintext" id="note" placeholder="If you have something important left to say">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="witList" class="col-sm-2 col-form-label">TODO: List of witnesses</label>
+				    <div class="col-sm-10">
+				      <input type="text" name="witList" class="form-control-plaintext" id="witList" placeholder="TODO">
+				    </div>
+				  </div><!-- TODO: try to handle creating several wits, etc. -->
+				  
+				  <button class="btn btn-primary u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-2 u-border-grey-75 u-border-hover-palette-4-dark-1 u-btn u-button-style u-palette-4-light-1 u-btn-2" type="submit">Get formatted metadata</button>
 				</form>
 			</div>
 		</div>
