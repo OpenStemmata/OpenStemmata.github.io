@@ -1,201 +1,221 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Document your stemma and create the content for the metadata.txt file!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css" media="screen">
-    <!--<link rel="stylesheet" href="Page-1.css" media="screen">-->
-    <script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="static/js/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 2.29.0, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
-    <link rel="icon" href="static/images/favicon.ico" />
-    <script type="application/ld+json">{
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="page_type" content="np-template-header-footer-from-plugin">
+	<title>Document your stemma and create the content for the metadata.txt file!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/css/style.css" media="screen">
+	<!--<link rel="stylesheet" href="Page-1.css" media="screen">-->
+	<script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="static/js/nicepage.js" defer=""></script>
+	<meta name="generator" content="Nicepage 2.29.0, nicepage.com">
+	<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+	<link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+	<link rel="icon" href="static/images/favicon.ico" />
+	<script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"url": "index.html",
 		"logo": "static/images/logo_partial.png"
 }</script>
-    <meta property="og:title" content="Page 1">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="index.html">
-    <meta property="og:url" content="index.html">
+	<meta property="og:title" content="Page 1">
+	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#478ac9">
+	<link rel="canonical" href="index.html">
+	<meta property="og:url" content="index.html">
+	<style type="text/css">
+		input[type="text"] {
+			border:1px solid rgb(240, 240, 240);
+		}
+	</style>
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-ffda"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="index.html" class="u-align-center u-image u-logo u-image-1" data-image-width="827" data-image-height="827">
-          <img src="static/images/logo_partial.png" class="u-logo-image u-logo-image-1" data-image-width="86">
-        </a>
-      </div></header>
-    <section class="u-clearfix u-section-1" id="sec-80e4">
+		<a href="index.html" class="u-align-center u-image u-logo u-image-1" data-image-width="827" data-image-height="827">
+		  <img src="static/images/logo_partial.png" class="u-logo-image u-logo-image-1" data-image-width="86">
+		</a>
+	  </div></header>
+	<section class="u-clearfix u-section-1" id="sec-80e4">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<form id="generate">
 				  <div class="form-group row">
-				    <label for="editionType" class="col-sm-2 col-form-label">Edition Type (where the stemma is found)</label>
-				    <div class="col-sm-10">
-				      <select name="editionType" id="editionType">
-				        <option value="book">book</option>
-				        <option value="article">article</option>
-				      </select>
-				    </div>
+					<label for="editionType" class="col-sm-2 col-form-label">Edition Type (where the stemma is found)</label>
+					<div class="col-sm-10">
+					  <select name="editionType" id="editionType">
+						<option value="book">book</option>
+						<option value="article">article</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionTitle" class="col-sm-2 col-form-label">Edition title</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love">
-				    </div>
+					<label for="editionTitle" class="col-sm-2 col-form-label">Edition title</label>
+					<div class="col-sm-10">
+					  <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionDate" class="col-sm-2 col-form-label">Edition title</label>
-				    <div class="col-sm-10">
-				      <input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968">
-				    </div>
+					<label for="editionDate" class="col-sm-2 col-form-label">Edition title</label>
+					<div class="col-sm-10">
+					  <input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionPlace" class="col-sm-2 col-form-label">Edition place</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock">
-				    </div>
+					<label for="editionPlace" class="col-sm-2 col-form-label">Edition place</label>
+					<div class="col-sm-10">
+					  <input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionColl" class="col-sm-2 col-form-label">Edition collection</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="editionColl" class="form-control-plaintext" id="editionColl" placeholder="Greatest Songs of History">
-				    </div>
+					<label for="editionColl" class="col-sm-2 col-form-label">Edition collection</label>
+					<div class="col-sm-10">
+					  <input type="text" name="editionColl" class="form-control-plaintext" id="editionColl" placeholder="Greatest Songs of History">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionCollNum" class="col-sm-2 col-form-label">Number in collection</label>
-				    <div class="col-sm-10">
-				      <input type="number" name="editionCollNum" class="form-control-plaintext" id="editionCollNum" placeholder="13">
-				    </div>
+					<label for="editionCollNum" class="col-sm-2 col-form-label">Number in collection</label>
+					<div class="col-sm-10">
+					  <input type="number" name="editionCollNum" class="form-control-plaintext" id="editionCollNum" placeholder="13">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionStemmaNum" class="col-sm-2 col-form-label">Stemma number (if more than one in the edition)</label>
-				    <div class="col-sm-10">
-				      <input type="number" name="editionStemmaNum" class="form-control-plaintext" id="editionStemmaNum" placeholder="2">
-				    </div>
+					<label for="editionStemmaNum" class="col-sm-2 col-form-label">Stemma number (if more than one in the edition)</label>
+					<div class="col-sm-10">
+					  <input type="number" name="editionStemmaNum" class="form-control-plaintext" id="editionStemmaNum" placeholder="2">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editor" class="col-sm-2 col-form-label">Editor</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E.">
-				    </div>
+					<label for="editor" class="col-sm-2 col-form-label">Editor</label>
+					<div class="col-sm-10">
+					  <input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E.">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionPage" class="col-sm-2 col-form-label">Page in edition</label>
-				    <div class="col-sm-10">
-				      <input type="number" name="editionPage" class="form-control-plaintext" id="editionPage" placeholder="243">
-				    </div>
+					<label for="editionPage" class="col-sm-2 col-form-label">Page in edition</label>
+					<div class="col-sm-10">
+					  <input type="number" name="editionPage" class="form-control-plaintext" id="editionPage" placeholder="243">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="editionLink" class="col-sm-2 col-form-label">Page in edition</label>
-				    <div class="col-sm-10">
-				      <input type="url" name="editionLink" class="form-control-plaintext" id="editionLink" placeholder="https://archive.org/details/pomesurlagrand00laha/page/n19">
-				    </div>
+					<label for="editionLink" class="col-sm-2 col-form-label">Page in edition</label>
+					<div class="col-sm-10">
+					  <input type="url" name="editionLink" class="form-control-plaintext" id="editionLink" placeholder="https://archive.org/details/pomesurlagrand00laha/page/n19">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="workOrigDate" class="form-control-plaintext" id="workOrigDate" placeholder="1080-1100">
-				    </div>
+					<label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin</label>
+					<div class="col-sm-10">
+					  <input type="text" name="workOrigDate" class="form-control-plaintext" id="workOrigDate" placeholder="1080-1100">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="workOrigPlace" class="col-sm-2 col-form-label">Work place of origin</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy (Rouen?)">
-				    </div>
+					<label for="workOrigPlace" class="col-sm-2 col-form-label">Work place of origin</label>
+					<div class="col-sm-10">
+					  <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy (Rouen?)">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="workAuthor" class="col-sm-2 col-form-label">Work author</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
-				    </div>
+					<label for="workAuthor" class="col-sm-2 col-form-label">Work author</label>
+					<div class="col-sm-10">
+					  <input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="workGenre" class="col-sm-2 col-form-label">Work Genre</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="workGenre" class="form-control-plaintext" id="workGenre" placeholder="chanson de geste">
-				    </div>
+					<label for="workGenre" class="col-sm-2 col-form-label">Work Genre</label>
+					<div class="col-sm-10">
+					  <input type="text" name="workGenre" class="form-control-plaintext" id="workGenre" placeholder="chanson de geste">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="workLangCode" class="col-sm-2 col-form-label">Work Language Code</label>
-				    <div class="col-sm-10">
-				      <select name="workLangCode" id="workLangCode">
-				        <option value="fro">Old French (fro)</option>
-				        <option value="frm">Middle French (frm)</option>
-				        <option value="gmh">Middle High German (gmh)</option>
-				        <option value="lat">Latin (lat)</option>
-				        <option value="dum">Middle Dutch (dum)</option>
-				        <option value="enm">Middle English (enm)</option>
-				        <option value="wlm">Middle Welsh (wlm)</option>
-				        <option value="osp">Old Castilian (osp)</option>
-				        <option value="pro">(Old) Occitan (pro)</option>
-				        <option value="cat">(Old) Catalan (cat)</option>
-				        <option value="ita">(Old) Italian (ita)</option>
-				        <option value="grc">Greek (grc)</option>
-				        <option value="xxx">other</option>
-				      </select>
-				    </div>
+					<label for="workLangCode" class="col-sm-2 col-form-label">Work Language Code</label>
+					<div class="col-sm-10">
+					  <select name="workLangCode" id="workLangCode">
+						<option value="fro">Old French (fro)</option>
+						<option value="frm">Middle French (frm)</option>
+						<option value="gmh">Middle High German (gmh)</option>
+						<option value="lat">Latin (lat)</option>
+						<option value="dum">Middle Dutch (dum)</option>
+						<option value="enm">Middle English (enm)</option>
+						<option value="wlm">Middle Welsh (wlm)</option>
+						<option value="osp">Old Castilian (osp)</option>
+						<option value="pro">(Old) Occitan (pro)</option>
+						<option value="cat">(Old) Catalan (cat)</option>
+						<option value="ita">(Old) Italian (ita)</option>
+						<option value="grc">Greek (grc)</option>
+						<option value="xxx">other</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="stemmaType" class="col-sm-2 col-form-label">Type of tree: reconstructed (general case) or observed (very rare)</label>
-				    <div class="col-sm-10">
-				      <select name="stemmaType" id="stemmaType">
-				        <option value="reconstructed">reconstructed</option>
-				        <option value="observed">observed</option>
-				      </select>
-				    </div>
+					<label for="stemmaType" class="col-sm-2 col-form-label">Type of tree: reconstructed (general case) or observed (very rare)</label>
+					<div class="col-sm-10">
+					  <select name="stemmaType" id="stemmaType">
+						<option value="reconstructed">reconstructed</option>
+						<option value="observed">observed</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="contam" class="col-sm-2 col-form-label">Contamination</label>
-				    <div class="col-sm-10">
-				      <select name="contam" id="contam">
-				        <option value="no">no</option>
-				        <option value="yes">yes</option>
-				      </select>
-				    </div>
+					<label for="contam" class="col-sm-2 col-form-label">Contamination</label>
+					<div class="col-sm-10">
+					  <select name="contam" id="contam">
+						<option value="no">no</option>
+						<option value="yes">yes</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="extraStemmContam" class="col-sm-2 col-form-label">Extra stemmatic contamination (i.e., coming from outside the tree)</label>
-				    <div class="col-sm-10">
-				      <select name="extraStemmContam" id="extraStemmContam">
-				        <option value="no">no</option>
-				        <option value="yes">yes</option>
-				      </select>
-				    </div>
+					<label for="extraStemmContam" class="col-sm-2 col-form-label">Extra stemmatic contamination (i.e., coming from outside the tree)</label>
+					<div class="col-sm-10">
+					  <select name="extraStemmContam" id="extraStemmContam">
+						<option value="no">no</option>
+						<option value="yes">yes</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="rootType" class="col-sm-2 col-form-label">Root type if specified: original, archetype</label>
-				    <div class="col-sm-10">
-				      <select name="rootType" id="rootType">
-				        <option value="unspecified">unspecified</option>
-				        <option value="archetype">archetype</option>
-				        <option value="original">original</option>
-				      </select>
-				    </div>
+					<label for="rootType" class="col-sm-2 col-form-label">Root type if specified: original, archetype</label>
+					<div class="col-sm-10">
+					  <select name="rootType" id="rootType">
+						<option value="unspecified">unspecified</option>
+						<option value="archetype">archetype</option>
+						<option value="original">original</option>
+					  </select>
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="note" class="col-sm-2 col-form-label">Note</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="note" class="form-control-plaintext" id="note" placeholder="If you have something important left to say">
-				    </div>
+					<label for="note" class="col-sm-2 col-form-label">Note</label>
+					<div class="col-sm-10">
+					  <input type="text" name="note" class="form-control-plaintext" id="note" placeholder="If you have something important left to say">
+					</div>
 				  </div>
 				  <div class="form-group row">
-				    <label for="witList" class="col-sm-2 col-form-label">TODO: List of witnesses</label>
-				    <div class="col-sm-10">
-				      <input type="text" name="witList" class="form-control-plaintext" id="witList" placeholder="TODO">
-				    </div>
+					<label for="witList" class="col-sm-2 col-form-label">TODO: List of witnesses</label>
+					<div class="col-sm-10">
+					  <input type="text" name="witList" class="form-control-plaintext" id="witList" placeholder="TODO">
+					</div>
 				  </div><!-- TODO: try to handle creating several wits, etc. -->
-				  
+				  <div class="form-group row">
+					<label for="witList" class="col-sm-2 col-form-label">List of witnesses</label>
+					<div class="col-sm-10 wit-row-container">
+						<div class="row wit-row" style="padding: 1em;">
+							<div class="col-md-6">
+								<input type="text" name="witSigle" class="form-control md-3" placeholder="Sigle" />
+								<input type="text" name="witDate" class="form-control md-3" placeholder="Date" />
+								<input type="text" name="witCote" class="form-control md-3" placeholder="Cote" />
+							</div>
+							<div class="col-md-6 btns">
+								<button type="button" class="btn btn-success add-row">+</button>
+								<button type="button" class="btn btn-danger  del-row invisible">-</button>
+							</div>
+						</div>
+					</div>
+				  </div><!-- TODO: try to handle creating several wits, etc. -->
 				  <button class="btn btn-primary u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-2 u-border-grey-75 u-border-hover-palette-4-dark-1 u-btn u-button-style u-palette-4-light-1 u-btn-2" type="submit">Get formatted metadata</button>
 				</form>
 			</div>
@@ -209,25 +229,45 @@
 	</section>
 
 	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7a6d"><!--<div class="u-clearfix u-sheet u-sheet-1">-->
-        <p class="u-small-text u-text u-text-variant u-text-1">
-          <a href="https://github.com/OpenStemmata" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1">Open Stemmata</a> | 2020
-        </p>
-      <!--</div>--></footer>
-    <!--<section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>-->
+		<p class="u-small-text u-text u-text-variant u-text-1">
+		  <a href="https://github.com/OpenStemmata" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1">Open Stemmata</a> | 2020
+		</p>
+	  <!--</div>--></footer>
+	<!--<section class="u-backlink u-clearfix u-grey-80">
+	  <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+		<span>Website Templates</span>
+	  </a>
+	  <p class="u-text">
+		<span>created with</span>
+	  </p>
+	  <a class="u-link" href="https://nicepage.com/" target="_blank">
+		<span>Website Builder Software</span>
+	  </a>. 
+	</section>-->
 
-    	<script type="text/javascript">
+		<script type="text/javascript">
 		const form = document.getElementById("generate"),
 			  output = document.getElementById("output");
+
+		const witRow = document.querySelector(".wit-row"),
+			witRowContainer = document.querySelector(".wit-row-container");
+
+		const addNode = function(event) {
+			event.preventDefault();
+			const newNode = witRow.cloneNode(true);
+			const hide = newNode.querySelector(".del-row"),
+				 show = newNode.querySelector(".add-row");
+
+			hide.classList.remove("invisible"); // = "inline";
+			hide.addEventListener("click", function(ev) {
+				newNode.remove();
+			});
+			show.addEventListener("click", addNode);
+
+			witRowContainer.appendChild(newNode);
+		};
+
+		witRow.querySelector(".add-row").addEventListener("click", addNode);
 
 		const normalize = function(a_string) {
 			return a_string.replace("'", "’");
@@ -256,11 +296,21 @@ contam : "${normalize(data.contam)}"
 extraStemmContam : "${normalize(data.extraStemmContam)}"
 rootType : "${normalize(data.rootType)}"
 note : "${normalize(data.note)}"
+wits:
+`;
+		[...document.querySelectorAll(".wit-row")].forEach(function (el) {
+			let sigle = el.querySelector("input[name='witSigle']").value,
+				date = el.querySelector("input[name='witDate']").value,
+				cote = el.querySelector("input[name='witCote']").value;
+			output.innerText += `    - sigle: "${sigle}"
+      date: "${date}"
+      cote: "${cote}"
 `;
 		});
+		});
 	</script>
-    <p>
-      <b>And now, you're all set ! Go copy and paste that into your metadata.txt file!</b>
-    </p>
+	<p>
+	  <b>And now, you're all set ! Go copy and paste that into your metadata.txt file!</b>
+	</p>
 </body>
 </html>
