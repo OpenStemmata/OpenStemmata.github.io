@@ -54,21 +54,21 @@
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionTitle" class="col-sm-2 col-form-label">Edition title</label>
+					<label for="editionTitle" class="col-sm-2 col-form-label">Edition title*</label>
 					<div class="col-sm-10">
-					  <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love">
+					  <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionDate" class="col-sm-2 col-form-label">Edition date</label>
+					<label for="editionDate" class="col-sm-2 col-form-label">Edition date*</label>
 					<div class="col-sm-10">
-					  <input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968">
+						<input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionPlace" class="col-sm-2 col-form-label">Edition place</label>
+					<label for="editionPlace" class="col-sm-2 col-form-label">Edition place*</label>
 					<div class="col-sm-10">
-					  <input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock">
+						<input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
@@ -90,9 +90,9 @@
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editor" class="col-sm-2 col-form-label">Editor</label>
+					<label for="editor" class="col-sm-2 col-form-label">Editor*</label>
 					<div class="col-sm-10">
-					  <input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E.">
+						<input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E." required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
@@ -195,27 +195,25 @@
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="witList" class="col-sm-2 col-form-label">TODO: List of witnesses</label>
-					<div class="col-sm-10">
-					  <input type="text" name="witList" class="form-control-plaintext" id="witList" placeholder="TODO">
-					</div>
-				  </div><!-- TODO: try to handle creating several wits, etc. -->
-				  <div class="form-group row">
-					<label for="witList" class="col-sm-2 col-form-label">List of witnesses</label>
+					<label for="witList" class="col-sm-2 col-form-label">List of witnesses (<strong>OPTIONAL</strong>)</label>
 					<div class="col-sm-10 wit-row-container">
 						<div class="row wit-row" style="padding: 1em;">
 							<div class="col-md-6">
-								<input type="text" name="witSigle" class="form-control md-3" placeholder="Sigle" />
-								<input type="text" name="witDate" class="form-control md-3" placeholder="Date" />
-								<input type="text" name="witCote" class="form-control md-3" placeholder="Cote" />
+								<input type="text" name="witSigla" class="form-control md-3" placeholder="Witness sigla (e.g., A)" />
+								<input type="text" name="witSignature" class="form-control md-3" placeholder="Ms. signature / identifier (e.g., Oxford, Bodleian Library, Digby 23)" />
+								<input type="text" name="witOrigDate" class="form-control md-3" placeholder="Witness date of origin" />
+								<input type="text" name="witOrigPlace" class="form-control md-3" placeholder="Witness place of origin" />
+								<input type="text" name="witNotes" class="form-control md-3" placeholder="Any further note about the witness" />
+								<input type="url" name="witMsDesc" class="form-control md-3" placeholder="URL link to a manuscript description (e.g., catalogue entry)" />
+								<input type="url" name="witDigit" class="form-control md-3" placeholder="URL link to a digitised facsimile" />
 							</div>
 							<div class="col-md-6 btns">
-								<button type="button" class="btn btn-success add-row">+</button>
+								<button type="button" class="btn btn-success add-row">Add another witness +</button>
 								<button type="button" class="btn btn-danger  del-row invisible">-</button>
 							</div>
 						</div>
 					</div>
-				  </div><!-- TODO: try to handle creating several wits, etc. -->
+				  </div>
 				  <button class="btn btn-primary u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-2 u-border-grey-75 u-border-hover-palette-4-dark-1 u-btn u-button-style u-palette-4-light-1 u-btn-2" type="submit">Get formatted metadata</button>
 				</form>
 			</div>
@@ -299,14 +297,23 @@ note : "${normalize(data.note)}"
 wits:
 `;
 		[...document.querySelectorAll(".wit-row")].forEach(function (el) {
-			let sigle = el.querySelector("input[name='witSigle']").value,
-				date = el.querySelector("input[name='witDate']").value,
-				cote = el.querySelector("input[name='witCote']").value;
-			output.innerText += `    - sigle: "${sigle}"
-      date: "${date}"
-      cote: "${cote}"
+			let witSigla = el.querySelector("input[name='witSigla']").value,
+				witSignature = el.querySelector("input[name='witSignature']").value,
+				witOrigDate = el.querySelector("input[name='witOrigDate']").value,
+				witOrigPlace = el.querySelector("input[name='witOrigPlace']").value,
+				witNotes = el.querySelector("input[name='witNotes']").value,
+				witMsDesc = el.querySelector("input[name='witMsDesc']").value,
+				witDigit = el.querySelector("input[name='witDigit']").value;
+			output.innerText += `    - witSigla: "${witSigla}"
+      witSignature: "${witSignature}"
+      witOrigDate: "${witOrigDate}"
+      witOrigPlace: "${witOrigPlace}"
+      witNotes: "${witNotes}"
+      witMsDesc: "${witMsDesc}"
+      witDigit: "${witDigit}"
 `;
 		});
+		output.innerText += "# Great, now copy and paste me in a metadata.txt file for your submission !";
 		});
 	</script>
 </body>
