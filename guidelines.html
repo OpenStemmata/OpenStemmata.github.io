@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="page_type" content="np-template-header-footer-from-plugin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <title>Open Stemmata</title>
+    <link rel="stylesheet" href="static/css/style.css" media="screen" />
+    <!--<link rel="stylesheet" href="Page-1.css" media="screen">-->
+    <script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="static/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 2.29.0, nicepage.com" />
+    <link id="u-theme-google-font" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />
+    <link id="u-page-google-font" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" />
+    <link rel="icon" href="static/images/favicon.ico" />
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html",
+		"logo": "static/images/logo_partial.png"
+}</script>
+    <meta property="og:title" content="Welcome to Open Stemmata!" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#478ac9" />
+    <link rel="canonical" href="index.html" />
+    <meta property="og:url" content="index.html" />
+  </head>
+  <body class="u-body">
+    <header class="u-clearfix u-header u-header" id="sec-ffda">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <a href="#" class="u-align-center u-image u-logo u-image-1" data-image-width="827"
+          data-image-height="827">
+          <img src="static/images/logo_header.png" class="u-logo-image u-logo-image-1"
+            data-image-width="86" alt="logo for Open Stemmata" />
+        </a>
+      </div>
+    </header>
+    <section id="sidebar">
+      <div>
+        <ol>
+          <li><a href="#step1">Prepare your record</a></li>
+          <li><a href="#step2">Prepare the metadata</a></li>
+          <li><a href="#step3">Prepare your stemma</a></li>
+          <li><a href="#step4">Pull your work</a></li>
+        </ol>
+      </div>
+    </section>
+    <section id="page-wrap">
+      <div>
+        <div class="u-clearfix u-expanded-width-sm u-expanded-width-xs u-gutter-14 u-layout-wrap u-layout-wrap-1">
+          <h1>Guidelines</h1>
+          <div>
+            <h2>In a nutshell</h2>
+            <p>Our idea is to create an open source collection of <b>historical text genealogies</b>, in
+              forms of tree-like graphs (also called <i>stemma</i>), for a <b>any european language</b>.</p>
+            <p>Trees are encoded with the<a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)" target="_blank">
+              DOT graph description language</a>: the image on the right is created out of the code on the left.</p>
+            
+              <pre><code>
+                <img src="static/images/guidelines_basicGraph.png"
+                  alt="basic graph" width="300px" classs="u-image-1  u-image" style="float:right;"/>
+digraph {
+    omega ->A;
+    omega ->B;
+
+    A -> C;
+    A -> D;
+
+    B -> E;
+    B -> F;
+}
+              </code></pre>
+            <p>Working with images generated out of the code allows us, on the long term, to query the code and conduct
+            quantitative research on (artificial) textual traditions.</p>
+          </div>
+        
+          <div>
+            <h2>Contribute</h2>
+            <p>You want to contribute? It is easy. To do so you need:
+            <ol>
+              <li>To prepare your data according to our guidelines (detailed <a href="#step1">infra</a>).</li>
+              <li>To share these data via email or (better) with a pull request (explained <a href="#step4">infra</a>).</li>
+            </ol>
+            </p>    
+            <div>
+              <h3 id="step0">0. Preliminary remarks</h3>
+              <ul>
+                <li>We do not ask you to <i>produce</i> a stemma, but to <i>reproduce</i> a stemma found in a scientific work.</li>
+                <li>If stemma are relatively static for classical text (Vergil, Homer…), it is not always the case for other
+                  languages (<i>e.g.</i> the <i>Devisement dou monde</i> of Marco Polo). If several stemma are available,
+                  we trust you to choose the best. Metadata are here to document this choice</li>
+              </ul>
+            </div>
+            <div>
+              <h3 id="step1">1. Prepare your record</h3>
+              <p>An example folder <a href="https://github.com/OpenStemmata/database/tree/main/examples/Segre_1971_Roland" target="_blank">is available
+                online</a>. You can also have a look at <a href="https://github.com/OpenStemmata/database" target="_blank">the
+                actual data</a>,  which are organised according to linguistic traditions (we follow the
+                <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes" target="_blank">tist of ISO 639-2 codes</a>:
+                <i>fro</i> for medieval French, <i>gmh</i> for medieval German…).</p>
+              <p>Each record is contained in a dedicated folder. It is made of up to three files. </p>
+               <ul>
+                 <li>Two are mandatory:</li>
+                  <ul>
+                   <li><code>metadata.txt</code> is metadata file about the stemma (author of the text, writing date, name of the
+                     philologist who made the stemma, scientific publication in which the stemma was found…). You can find an
+                     example <a href="ADD" target="_blank">here</a>.</li>
+                   <li><code>stemma.dot</code> is DOT format file for the stemma. You can find an example
+                     <a href="ADD" target="_blank">here</a>.</li>
+                 </ul>
+                 <li>One is optional:</li>
+                 <ul>
+                   <li><code>stemma.png</code> is an image scan found in the source (article, edition…). You can find an
+                     example <a href="ADD" target="_blank">here</a>.</li>
+                 </ul>
+               </ul>
+            </div>
+            <div>
+              <h3 id="step2">2. Prepare the metadata.</h3>
+              <p>This is an important step! You need to explain what are your sources (traceability) and who you are
+                (to receive credit for your work!). You need to prepare four types of metadata.</p>
+                <ul>
+                  <li>Three are mandatory:</li>
+                  <ul>
+                    <li>From which secondary source is the stemma from (an article, a critical edition…)</li>
+                    <li>Basic information about the text: author, title, date, location.</li>
+                    <li>Basic information about the informer (you!)</li>
+                  </ul>
+                  <li>One is optional</li>
+                  <ul>
+                    <li>Description of the witnesses.</li>
+                  </ul>
+                </ul>
+                <p>An <a href="https://openstemmata.github.io/document-your-stemma.html" target="_blank">online form</a> is
+                available to help you create the <code>metadata.txt</code> file you need to attach to your stemma.</p>
+            </div>
+            <div>
+              <h3 id="step3">3. Prepare your stemma</h3>
+              <p>
+                To encode the graph, we use the <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)" target="_blank">
+                DOT graph description language.</a>.
+              </p>
+              <p>To make it easier, you can find a free editor, <i>Edotor</i>, at <a href="https://edotor.net/?engine=dot?engine=dot#%23%20Place%20the%20cursor%20inside%20%22graph%22%20to%20get%20some%20refactoring%20options%0A%0Adigraph%20%7B%0A%0A%20%20%20%20%23%20To%20refactor%20nodes%2C%20place%20the%20cursor%20left%20to%20a%20node%20name%0A%20%20%20%20omega%20-%3E%20b%3B%0A%20%20%20%20omega%20-%3E%20c%3B%0A%20%20%20%20c%20-%3E%20d%3B%0A%20%20%20%20c%20-%3E%20e%3B%0A%20%20%20%20omega%20-%3E%201%3B%20%0A%20%20%20%201%20-%3E%20a%20%23%20use%20numbers%20for%20unlabelled%20nodes%20in%20the%20source%20stemma%0A%20%20%20%201%20-%3E%20aprime%0A%0A%20%20%20%20%23%20Hover%20over%20color%20names%20to%20get%20a%20color%20picker%0A%20%20%20%20b%20-%3E%20e%20%5Bstyle%3D%22dashed%22%5D%0A%20%20%20%20b%20-%3E%20c%20%5Bdir%3Dnone%2C%20style%3D%22dashed%22%5D%3B%20%23%20for%20the%20exception%20where%20an%20undirected%20link%20is%20existant.%0A%0A%20%20%20%20%23%20Grey%20color%20is%20used%20for%20hypothetical%20nodes%3B%20labels%20can%20be%20redefined%20if%20needed%0A%20%20%20%20omega%20%5Bcolor%3D%22grey%22%5D%3B%0A%20%20%20%201%20%5Bcolor%3D%22grey%22%2C%20label%3D%22%22%5D%3B%20%0A%20%20%20%20aprime%5Blabel%3D%22a'%22%5D%0A%0A%7D%0A" target="_blank">this adress</a>.</p>
+              <p>Here are a few rules one need to follow:</p>
+              <table style="width:100%">
+                <tr>
+                  <td>Simple graph</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega ->A;
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule1.png" alt="rule 1" width="150px"/></td>
+                </tr>
+                <tr>
+                  <td>Contamination</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega ->A[style="dashed"];
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule2.png" alt="rule 2" width="150px"/></td>
+                </tr>
+                <tr>
+                  <td>Unidrected <br/>contamination</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega ->A[dir=none, style="dashed"];
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule3.png" alt="rule 3" width="150px"/></td>
+                </tr>
+                <tr>
+                  <td>Greek letter</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega[label="Ω"]
+    omega ->A[dir=none, style="dashed"];
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule4.png" alt="rule 4" width="150px"/></td>
+                </tr>  
+                <tr>
+                  <td>Hypothetical link</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega[color="grey", label="Ω"]
+    omega ->A[dir=none, style="dashed"];
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule5.png" alt="rule 5" width="150px"/></td>
+                </tr>
+                <tr>
+                  <td>No name</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega[color="grey", label=""]
+    omega ->A[dir=none, style="dashed"];
+    omega ->B;
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule6.png" alt="rule 6" width="150px"/></td>
+                </tr>                </table> 
+            </div>
+            <div>
+              <h3 id="step4">4. Pull your work (Optional)</h3>
+              <p>We have decided to use Github to work collaboratively. To avoid major problems while sharing data, we recommend to
+              share your work using a pull request.</p>
+              <ol>
+                <li>Fork the repository <img src="static/images/fork1.png"
+                  alt="Fork 1" width="500px" style="float:right;"/></li>
+                <br/><br/>
+                <li>Clone your new fork locally with (<code>YOUR_PSEUDO</code> has to be replaced by your GitHub username).
+                  <pre>
+                    <code>
+git clone git@github.com:YOUR_PSEUDO/database.git
+                    </code>
+                  </pre>                  
+                </li>
+                <li>Track the original repository as a remote of the fork
+                  <pre>
+                    <code>
+git remote add --track master upstream git@github.com:OpenStemmata/database.git
+git fetch upstream
+                    </code>
+                  </pre>
+                </li>
+                <li>Add your record (a folder containing the <code>metadata.txt</code>, <code>stemma.dot</code>, and (optional)
+                  <code>stemma.png</code> files) in the <code>Data</code> folder.
+                  <pre>
+                    <code>
+git checkout -b BRANCH_NAME
+                    </code>
+                  </pre>
+                </li>
+                <li>Add, commit, and push the changes
+                  <pre>
+                    <code>
+git add PATH_TO_YOUR_FILES
+git commit -m "NAME_OF_THE_TEXT"
+git push -u origin BRANCH_NAME
+                    </code>
+                  </pre>
+                </li>
+                <li>Submit your pull request going back to your repo</li>
+              </ol>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7a6d">
+      <!--<div class="u-clearfix u-sheet u-sheet-1">-->
+      <p class="u-small-text u-text u-text-variant u-text-1">
+        <a href="https://github.com/OpenStemmata"
+          class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1"
+          >Open Stemmata</a> | 2020 </p>
+    </footer>
+  </body>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+  <script>
+        $(function() {
+            var offset = $("#sidebar").offset();
+            var topPadding = 15;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > offset.top) {
+                    $("#sidebar").stop().animate({
+                        marginTop: $(window).scrollTop() - offset.top + topPadding
+                    });
+                } else {
+                    $("#sidebar").stop().animate({
+                        marginTop: 0
+                    });
+                };
+            });
+        });
+    </script>
+</html>
