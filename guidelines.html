@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />
     <link id="u-page-google-font" rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" />
-    <link rel="icon" href="static/images/favicon.ico" />
+    <link rel="icon" hrlef="static/images/favicon.ico" />
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -231,17 +231,16 @@ digraph {
               <p>We have decided to use Github to work collaboratively. To avoid major problems while sharing data, we recommend to
               share your work using a pull request.</p>
               <ol>
-                <li>Fork the repository <img src="static/images/fork1.png"
-                  alt="Fork 1" width="500px" style="float:right;"/></li>
-                <br/><br/>
-                <li>Clone your new fork locally with (<code>YOUR_PSEUDO</code> has to be replaced by your GitHub username).
+                <li>Fork the <a href="https://github.com/OpenStemmata/database" target="_blank">official repository</a> (<i>i.e.</i> make a copy of the repository that you can modify)<br/><br/>
+                  <img src="static/images/fork1.png" alt="Fork 1" width="500px"/><br/></li>
+                <li>Clone your new fork locally (<code>YOUR_PSEUDO</code> has to be replaced by your GitHub username). In the terminal, write:
                   <pre>
                     <code>
 git clone git@github.com:YOUR_PSEUDO/database.git
                     </code>
                   </pre>
                 </li>
-                <li>Track the original repository as a remote of the fork
+                <li>Track the original repository as a remote of the fork:
                   <pre>
                     <code>
 git remote add --track master upstream git@github.com:OpenStemmata/database.git
@@ -249,8 +248,8 @@ git fetch upstream
                     </code>
                   </pre>
                 </li>
-                <li>Add your record (a folder containing the <code>metadata.txt</code>, <code>stemma.dot</code>, and (optional)
-                  <code>stemma.png</code> files) in the <code>Data</code> folder.
+                <li>On your computer, create your record (a folder containing the following files: <code>metadata.txt</code>,
+                  <code>stemma.dot</code>, and (optional) <code>stemma.png</code>) in the <code>Data</code> folder. Create a branch
                   <pre>
                     <code>
 git checkout -b BRANCH_NAME
@@ -260,14 +259,17 @@ git checkout -b BRANCH_NAME
                 <li>Add, commit, and push the changes
                   <pre>
                     <code>
-git add PATH_TO_YOUR_FILES
+git add PATH/TO/metadata.txt PATH/TO/stemma.dot PATH/TO/stemma.png
 git commit -m "NAME_OF_THE_TEXT"
 git push -u origin BRANCH_NAME
                     </code>
                   </pre>
                 </li>
-                <li>Submit your pull request by going back to your repo and clicking on "compare and pull request".  <img src="static/images/fork2.png"
-                  alt="Fork 2" width="500px" style="float:right;"/></li>
+                <li>Submit your pull request by going back to your repo (control that the name in the red rectangle is the
+                  same than <code>BRANCH_NAME</code>) and clicking on "compare and pull request". 
+                  <br/><br/><img src="static/images/fork2.png" alt="Fork 2" width="500px"/><br/></li>
+                <li>Create the pull request (the name in the red rectangle should be the same than <code>BRANCH_NAME</code>).
+                  <br/><br/><img src="static/images/fork3.png" alt="Fork 3" width="500px"/><br/></li>
               </ol>
             </div>
           </div>
