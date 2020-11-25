@@ -15,14 +15,23 @@ ADDED BY SIMON
 
 #page-wrap {
   margin-right:40px;
-  margin-left: 230px;
+  margin-left: 240px;
   position: relative;
 }
 
 #sidebar {
-  width: 190px;
+  width: 210px;
   position: fixed;
   margin-left: 10px;
+  background-color: #dce8ae;
+  border: solid;
+  padding-left: 10px;
+}
+
+a.sidebar{
+  color: black;
+  text-decoration: none;
+
 }
 
  /*
