@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />
     <link id="u-page-google-font" rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" />
-    <link rel="icon" hrlef="static/images/favicon.ico" />
+    <link rel="icon" href="static/images/favicon.ico" />
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -59,13 +59,13 @@
           <div>
             <h2>In a nutshell</h2>
             <p>Our idea is to create an open source collection of <b>historical text genealogies</b>, in
-              forms of tree-like graphs (also called <i>stemma</i>), for a <b>any european language</b>.</p>
+              forms of tree-like graphs (also called <i>stemma</i>), for <b>any <!--european--> language</b>.</p>
             <p>Trees are encoded with the<a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)" target="_blank">
               DOT graph description language</a>: the image on the right is created out of the code on the left.</p>
 
               <pre><code>
                 <img src="static/images/guidelines_basicGraph.png"
-                  alt="basic graph" width="300px" classs="u-image-1  u-image" style="float:right;"/>
+                  alt="basic graph" width="300" class="u-image-1  u-image" style="float:right;"/>
 digraph {
     omega ->A;
     omega ->B;
@@ -78,24 +78,23 @@ digraph {
 }
               </code></pre>
             <p>Working with images generated out of the code allows us, on the long term, to query the code and conduct
-            quantitative research on (artificial) textual traditions.</p>
+            quantitative research on <!--(artificial)--> textual traditions.</p>
           </div>
 
           <div>
             <h2>Contribute</h2>
-            <p>You want to contribute? It is easy. To do so you need:
+            <p>You want to contribute? It is easy. To do so you need:</p>
             <ol>
               <li>To prepare your data according to our guidelines (detailed <a href="#step1">infra</a>).</li>
               <li>To share these data via email or (better) with a pull request (explained <a href="#step4">infra</a>).</li>
             </ol>
-            </p>
             <div>
               <h3 id="step0">0. Preliminary remarks</h3>
               <ul>
                 <li>We do not ask you to <i>produce</i> a stemma, but to <i>reproduce</i> a stemma found in a scientific work.</li>
-                <li>If stemma are relatively static for classical text (Vergil, Homer…), it is not always the case for other
-                  languages (<i>e.g.</i> the <i>Devisement dou monde</i> of Marco Polo). If several stemma are available,
-                  we trust you to choose the best. Metadata are here to document this choice</li>
+                <li>If stemma are relatively static for classical texts (Virgil, Homer…), it is not always the case for other
+                  languages (<i>e.g.</i> the <i>Devisement dou monde</i> of Marco Polo). If several stemmata are available,
+                  we trust you to choose the best or reproduce all relevant stemmata when necessary. Metadata are here to document this choice</li>
               </ul>
             </div>
             <div>
@@ -107,7 +106,7 @@ digraph {
                 <i>fro</i> for medieval French, <i>gmh</i> for medieval German…).</p>
               <p>Each record is contained in a dedicated folder. It is made of up to three files. </p>
                <ul>
-                 <li>Two are mandatory:</li>
+                 <li>Two are mandatory:
                   <ul>
                    <li><code>metadata.txt</code> is metadata file about the stemma (author of the text, writing date, name of the
                      philologist who made the stemma, scientific publication in which the stemma was found…). You can find an
@@ -115,28 +114,33 @@ digraph {
                    <li><code>stemma.dot</code> is DOT format file for the stemma. You can find an example
                      <a href="https://github.com/OpenStemmata/database/blob/main/examples/Segre_1971_Roland/stemma.dot" target="_blank">here</a>.</li>
                  </ul>
-                 <li>One is optional:</li>
+                 </li>
+                 <li>One is optional:
                  <ul>
                    <li><code>stemma.png</code> is an image scan found in the source (article, edition…). You can find an
                      example <a href="https://github.com/OpenStemmata/database/blob/main/examples/Segre_1971_Roland/stemma.png" target="_blank">here</a>.</li>
                  </ul>
+                 </li>
                </ul>
             </div>
             <div>
               <h3 id="step2">2. Prepare the metadata.</h3>
               <p>This is an important step! You need to explain what are your sources (traceability) and who you are
                 (to receive credit for your work!). You need to prepare four types of metadata.</p>
+              
                 <ul>
-                  <li>Three are mandatory:</li>
+                  <li>Three are (at least partially) mandatory:
                   <ul>
                     <li>From which secondary source is the stemma from (an article, a critical edition…)</li>
                     <li>Basic information about the text: author, title, date, location.</li>
                     <li>Basic information about the informer (you!)</li>
                   </ul>
-                  <li>One is optional</li>
+                 </li>
+                  <li>One is optional
                   <ul>
                     <li>Description of the witnesses.</li>
                   </ul>
+                  </li>
                 </ul>
                 <p>An <a href="https://openstemmata.github.io/document-your-stemma.html" target="_blank">online form</a> is
                 available to help you create the <code>metadata.txt</code> file you need to attach to your stemma.</p>
@@ -160,79 +164,101 @@ digraph {
 }
                     </code></pre>
                   </td>
-                  <td><img src="static/images/Guidelines_rule1.png" alt="rule 1" width="150px"/></td>
-                </tr>
-                <tr>
-                  <td>Contamination</td>
-                  <td>
-                    <pre><code>
-digraph {
-    omega ->A[style="dashed"];
-    omega ->B;
-}
-                    </code></pre>
-                  </td>
-                  <td><img src="static/images/Guidelines_rule2.png" alt="rule 2" width="150px"/></td>
-                </tr>
-                <tr>
-                  <td>Unidrected <br/>contamination</td>
-                  <td>
-                    <pre><code>
-digraph {
-    omega ->A[dir=none, style="dashed"];
-    omega ->B;
-}
-                    </code></pre>
-                  </td>
-                  <td><img src="static/images/Guidelines_rule3.png" alt="rule 3" width="150px"/></td>
+                  <td><img src="static/images/Guidelines_rule1.png" alt="rule 1" width="150"/></td>
                 </tr>
                 <tr>
                   <td>Greek letter</td>
                   <td>
                     <pre><code>
 digraph {
-    omega[label="Ω"]
-    omega ->A[dir=none, style="dashed"];
+    omega[label="Ω"];
+    omega ->A;
     omega ->B;
 }
                     </code></pre>
                   </td>
-                  <td><img src="static/images/Guidelines_rule4.png" alt="rule 4" width="150px"/></td>
+                  <td><img src="static/images/Guidelines_rule4.png" alt="rule 4" width="150"/></td>
                 </tr>
                 <tr>
-                  <td>Hypothetical link</td>
+                  <td>Hypothetical node<br/> (e.g., archetype, subarchetype…)<br/> in grey</td>
                   <td>
                     <pre><code>
 digraph {
-    omega[color="grey", label="Ω"]
-    omega ->A[dir=none, style="dashed"];
+    omega[label="Ω", color="grey"];
+    omega ->A;
     omega ->B;
 }
                     </code></pre>
                   </td>
-                  <td><img src="static/images/Guidelines_rule5.png" alt="rule 5" width="150px"/></td>
+                  <td><img src="static/images/Guidelines_rule5.png" alt="rule 5" width="150"/></td>
                 </tr>
                 <tr>
-                  <td>No name</td>
+                  <td>Unamed (hypothetical) node</td>
                   <td>
                     <pre><code>
 digraph {
-    omega[color="grey", label=""]
-    omega ->A[dir=none, style="dashed"];
-    omega ->B;
+    omega[label="Ω", color="grey"];
+    omega ->A;
+    omega -> 1;
+    1 -> B;
+    1 -> C;
+    1[label="", color="grey"];
 }
                     </code></pre>
                   </td>
-                  <td><img src="static/images/Guidelines_rule6.png" alt="rule 6" width="150px"/></td>
-                </tr>                </table>
+                  <td><img src="static/images/Guidelines_rule6.png" alt="rule 6" width="150"/></td>
+                </tr>
+                <tr>
+                  <td>Contamination</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega[label="Ω", color="grey"];
+    omega ->A;
+    omega -> 1;
+    1 -> B;
+    1 -> C;
+    1[label="", color="grey"];
+    A -> B [style="dashed"];
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule2.png" alt="rule 2" width="150"/></td>
+                </tr>
+                <tr>
+                  <td>Unidrected <br/>contamination</td>
+                  <td>
+                    <pre><code>
+digraph {
+    omega[label="Ω", color="grey"];
+    omega ->A;
+    omega -> 1;
+    1 -> B;
+    1 -> C;
+    1[label="", color="grey"];
+    A -> B [style="dashed", dir=none];
+}
+                    </code></pre>
+                  </td>
+                  <td><img src="static/images/Guidelines_rule3.png" alt="rule 3" width="150"/></td>
+                </tr>
+              </table>
             </div>
             <div>
               <h3 id="step4">4. Pull your work (Optional)</h3>
+              
+              <p><strong>If you can't make a pull request</strong>, drop us the files with a few words by <strong>opening an <a href="https://github.com/OpenStemmata/database/issues/new">issue</a></strong> and 
+                appending the files!</p>
+              
+              <img src="static/images/issue.png" alt="Opening an issue" width="800"/>
+              
+              <p>But please, if you can do a pull request, we prefer it this way!</p>
+              
               <p>We have decided to use Github to work collaboratively. To avoid major problems while sharing data, we recommend to
-              share your work using a pull request.</p>
+              share your work using a pull request. Here's how.</p>
               <ol>
                 <li>Fork the <a href="https://github.com/OpenStemmata/database" target="_blank">official repository</a> (<i>i.e.</i> make a copy of the repository that you can modify)<br/><br/>
-                  <img src="static/images/fork1.png" alt="Fork 1" width="500px"/><br/></li>
+                  <img src="static/images/fork1.png" alt="Fork 1" width="500"/><br/></li>
                 <li>Clone your new fork locally (<code>YOUR_PSEUDO</code> has to be replaced by your GitHub username). In the terminal, write:
                   <pre>
                     <code>
@@ -267,9 +293,9 @@ git push -u origin BRANCH_NAME
                 </li>
                 <li>Submit your pull request by going back to your repo (control that the name in the red rectangle is the
                   same than <code>BRANCH_NAME</code>) and clicking on "compare and pull request". 
-                  <br/><br/><img src="static/images/fork2.png" alt="Fork 2" width="500px"/><br/></li>
+                  <br/><br/><img src="static/images/fork2.png" alt="Fork 2" width="500"/><br/></li>
                 <li>Create the pull request (the name in the red rectangle should be the same than <code>BRANCH_NAME</code>).
-                  <br/><br/><img src="static/images/fork3.png" alt="Fork 3" width="500px"/><br/></li>
+                  <br/><br/><img src="static/images/fork3.png" alt="Fork 3" width="500"/><br/></li>
               </ol>
             </div>
           </div>
@@ -283,9 +309,8 @@ git push -u origin BRANCH_NAME
           class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-1"
           >Open Stemmata</a> | 2020 </p>
     </footer>
-  </body>
-  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-  <script>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+    <script>
         $(function() {
             var offset = $("#sidebar").offset();
             var topPadding = 15;
@@ -302,4 +327,5 @@ git push -u origin BRANCH_NAME
             });
         });
     </script>
+  </body>
 </html>
