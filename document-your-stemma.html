@@ -36,7 +36,7 @@
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-ffda"><div class="u-clearfix u-sheet u-sheet-1">
 		<a href="index.html" class="u-align-center u-image u-logo u-image-1" data-image-width="827" data-image-height="827">
-		  <img src="static/images/logo_partial.png" class="u-logo-image u-logo-image-1" data-image-width="86">
+		  <img src="static/images/logo_partial.png" class="u-logo-image u-logo-image-1" data-image-width="86" alt="Open stemmata logo">
 		</a>
 	  </div></header>
 	<section class="u-clearfix u-section-1" id="sec-80e4">
@@ -45,68 +45,80 @@
 			<div class="col-12">
 				<form id="generate">
 				  <div class="form-group row">
-					<label for="editionType" class="col-sm-2 col-form-label">Edition Type (where the stemma is found)</label>
+					<label for="editionType" class="col-sm-2 col-form-label">Publication Type (where the stemma is found)</label>
 					<div class="col-sm-10">
-					  <select name="editionType" id="editionType">
+					  <select name="publicationType" id="editionType">
 						<option value="book">book</option>
 						<option value="article">article</option>
 					  </select>
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionTitle" class="col-sm-2 col-form-label">Edition title*</label>
+				  	<label for="publicationTitle" class="col-sm-2 col-form-label">Publication title*</label>
 					<div class="col-sm-10">
-					  <input type="text" name="editionTitle" class="form-control-plaintext" id="editionTitle" placeholder="Songs of Peace and Love" required="required">
+						<input type="text" name="publicationTitle" class="form-control-plaintext" id="publicationTitle" placeholder="Songs of Peace and Love: a Critical Edition" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionDate" class="col-sm-2 col-form-label">Edition date*</label>
+				  	<label for="publicationDate" class="col-sm-2 col-form-label">Publication date*</label>
 					<div class="col-sm-10">
-						<input type="number" name="editionDate" class="form-control-plaintext" id="editionDate" placeholder="1968" required="required">
+						<input type="number" name="publicationDate" class="form-control-plaintext" id="publicationDate" placeholder="1968" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionPlace" class="col-sm-2 col-form-label">Edition place*</label>
+				  	<label for="publicationPlace" class="col-sm-2 col-form-label">Publication place*</label>
 					<div class="col-sm-10">
-						<input type="text" name="editionPlace" class="form-control-plaintext" id="editionPlace" placeholder="Woodstock" required="required">
+						<input type="text" name="publicationPlace" class="form-control-plaintext" id="publicationPlace" placeholder="Woodstock" required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionColl" class="col-sm-2 col-form-label">Edition collection</label>
+				  	<label for="publicationSeries" class="col-sm-2 col-form-label">Publication series</label>
 					<div class="col-sm-10">
-					  <input type="text" name="editionColl" class="form-control-plaintext" id="editionColl" placeholder="Greatest Songs of History">
+						<input type="text" name="publicationSeries" class="form-control-plaintext" id="publicationSeries" placeholder="Greatest Songs of History / Journal of Songs Studies">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionCollNum" class="col-sm-2 col-form-label">Number in collection</label>
+				  	<label for="publicationNum" class="col-sm-2 col-form-label">Number in series</label>
 					<div class="col-sm-10">
-					  <input type="number" name="editionCollNum" class="form-control-plaintext" id="editionCollNum" placeholder="13">
+						<input type="number" name="publicationNum" class="form-control-plaintext" id="publicationNum" placeholder="13">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionStemmaNum" class="col-sm-2 col-form-label">Stemma number (if more than one in the edition)</label>
+				  	<label for="publicationStemmaNum" class="col-sm-2 col-form-label">Stemma number (if more than one for the text in the publication)</label>
 					<div class="col-sm-10">
-					  <input type="number" name="editionStemmaNum" class="form-control-plaintext" id="editionStemmaNum" placeholder="2">
+						<input type="number" name="publicationStemmaNum" class="form-control-plaintext" id="publicationStemmaNum" placeholder="2">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editor" class="col-sm-2 col-form-label">Editor*</label>
+				  	<label for="publicationAuthors" class="col-sm-2 col-form-label">Publication author(s)*</label>
 					<div class="col-sm-10">
-						<input type="text" name="editor" class="form-control-plaintext" id="editor" placeholder="Ditor, Joe E." required="required">
+						<input type="text" name="publicationAuthors" class="form-control-plaintext" id="publicationAuthors" placeholder="Ditor, Joe E." required="required">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionPage" class="col-sm-2 col-form-label">Page in edition</label>
+					<label for="publicationPage" class="col-sm-2 col-form-label">Page in edition</label>
 					<div class="col-sm-10">
-					  <input type="number" name="editionPage" class="form-control-plaintext" id="editionPage" placeholder="243">
+						<input type="text" name="publicationPage" class="form-control-plaintext" id="publicationPage" placeholder="243">
 					</div>
 				  </div>
 				  <div class="form-group row">
-					<label for="editionLink" class="col-sm-2 col-form-label">Link to edition (digitisation or native digital)</label>
+				  	<label for="publicationLink" class="col-sm-2 col-form-label">Link to publication (digitisation or native digital)</label>
 					<div class="col-sm-10">
-					  <input type="url" name="editionLink" class="form-control-plaintext" id="editionLink" placeholder="https://archive.org/details/pomesurlagrand00laha/page/n19">
+						<input type="url" name="publicationLink" class="form-control-plaintext" id="publicationLink" placeholder="https://archive.org/details/pomesurlagrand00laha/page/n19">
 					</div>
 				  </div>
+					<div class="form-group row">
+						<label for="workTitle" class="col-sm-2 col-form-label">Work title*</label>
+						<div class="col-sm-10">
+							<input type="text" name="workTitle" class="form-control-plaintext" id="workTitle" placeholder="La Chanson de Roland" required="required">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="workViaf" class="col-sm-2 col-form-label">Work <a href="https://viaf.org/">VIAF</a> number</label>
+						<div class="col-sm-10">
+							<input type="text" name="workViaf" class="form-control-plaintext" id="workViaf" placeholder="301374774">
+						</div>
+					</div>
 				  <div class="form-group row">
 					<label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin</label>
 					<div class="col-sm-10">
@@ -125,6 +137,12 @@
 					  <input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
 					</div>
 				  </div>
+					<div class="form-group row">
+						<label for="workAuthorViaf" class="col-sm-2 col-form-label">Work author <a href="https://viaf.org/">VIAF</a> number</label>
+						<div class="col-sm-10">
+							<input type="text" name="workAuthorViaf" class="form-control-plaintext" id="workAuthorViaf" placeholder="87681171">
+						</div>
+					</div>
 				  <div class="form-group row">
 					<label for="workGenre" class="col-sm-2 col-form-label">Work genre</label>
 					<div class="col-sm-10">
@@ -188,6 +206,18 @@
 					  </select>
 					</div>
 				  </div>
+					<div class="form-group row">
+						<label for="contributor" class="col-sm-2 col-form-label">Contributor (you)*</label>
+						<div class="col-sm-10">
+							<input type="text" name="contributor" class="form-control-plaintext" id="contributor" placeholder="You name" required="required"> 
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="contributorORCID" class="col-sm-2 col-form-label">Contributor <a href="https://orcid.org/">ORCID</a></label>
+						<div class="col-sm-10">
+							<input type="text" name="contributorORCID" class="form-control-plaintext" id="contributorORCID" placeholder="0000-0003-0385-7037">
+						</div>
+					</div>
 				  <div class="form-group row">
 					<label for="note" class="col-sm-2 col-form-label">Note</label>
 					<div class="col-sm-10">
@@ -274,25 +304,30 @@
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
 			var data = Object.fromEntries(new FormData(form));
-			output.innerText = `editionType : "${normalize(data.editionType)}"
-editionTitle : "${normalize(data.editionTitle)}"
-editionDate : "${normalize(data.editionDate)}"
-editionPlace : "${normalize(data.editionPlace)}"
-editionColl : "${normalize(data.editionColl)}"
-editionCollNum: "${normalize(data.editionCollNum)}"
-editionStemmaNum: "${normalize(data.editionStemmaNum)}"
-editor : "${normalize(data.editor)}"
-editionPage : "${normalize(data.editionPage)}"
-editionLink : "${normalize(data.editionLink)}"
+			output.innerText = `publicationType : "${normalize(data.publicationType)}"
+publicationTitle : "${normalize(data.publicationTitle)}"
+publicationDate : "${normalize(data.publicationDate)}"
+publicationPlace : "${normalize(data.publicationPlace)}"
+publicationSeries : "${normalize(data.publicationSeries)}"
+publicationNum: "${normalize(data.publicationNum)}"
+publicationStemmaNum: "${normalize(data.publicationStemmaNum)}"
+publicationAuthors : "${normalize(data.publicationAuthors)}"
+publicationPage : "${normalize(data.publicationPage)}"
+publicationLink : "${normalize(data.publicationLink)}"
+workTitle : "${normalize(data.workTitle)}"
+workViaf : "${normalize(data.workViaf)}"
 workOrigDate : "${normalize(data.workOrigDate)}"
 workOrigPlace : "${normalize(data.workOrigPlace)}"
 workAuthor : "${normalize(data.workAuthor)}"
+workAuthorViaf : "${normalize(data.workAuthorViaf)}"
 workGenre : "${normalize(data.workGenre)}"
 workLangCode : "${normalize(data.workLangCode)}"
 stemmaType : "${normalize(data.stemmaType)}"
 contam : "${normalize(data.contam)}"
 extraStemmContam : "${normalize(data.extraStemmContam)}"
 rootType : "${normalize(data.rootType)}"
+contributor : "${normalize(data.contributor)}"
+contributorORCID : "${normalize(data.contributorORCID)}"
 note : "${normalize(data.note)}"
 wits:
 `;
