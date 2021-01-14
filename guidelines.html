@@ -105,19 +105,19 @@ digraph {
                 actual data</a>,  which are organised according to linguistic traditions (we follow the
                 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes" target="_blank">tist of ISO 639-2 codes</a>:
                 <i>fro</i> for medieval French, <i>gmh</i> for medieval German…).</p>
-              <p>Each record is contained in a dedicated folder. It is made of up to three files. </p>
+              <p>Each record is contained in a dedicated folder. It is made of up to three files (always with the same name, <i>i.e.</i> those given <i>infra</i>. </p>
                <ul>
                  <li>Two are mandatory:</li>
                   <ul>
                    <li><code>metadata.txt</code> is metadata file about the stemma (author of the text, writing date, name of the
                      philologist who made the stemma, scientific publication in which the stemma was found…). You can find an
                      example <a href="https://github.com/OpenStemmata/database/blob/main/examples/Segre_1971_Roland/metadata.txt" target="_blank">here</a>.</li>
-                   <li><code>stemma.dot</code> is DOT format file for the stemma. You can find an example
+                   <li><code>stemma.gv</code> is DOT format file for the stemma. You can find an example
                      <a href="https://github.com/OpenStemmata/database/blob/main/examples/Segre_1971_Roland/stemma.dot" target="_blank">here</a>.</li>
                  </ul>
                  <li>One is optional:</li>
                  <ul>
-                   <li><code>stemma.png</code> is an image scan found in the source (article, edition…). You can find an
+                   <li><code>stemma.png</code> is an image scan (if possible in black and white, as a png file) found in the source (article, edition…). You can find an
                      example <a href="https://github.com/OpenStemmata/database/blob/main/examples/Segre_1971_Roland/stemma.png" target="_blank">here</a>.</li>
                  </ul>
                </ul>
@@ -266,7 +266,7 @@ git push -u origin BRANCH_NAME
                   </pre>
                 </li>
                 <li>Submit your pull request by going back to your repo (control that the name in the red rectangle is the
-                  same than <code>BRANCH_NAME</code>) and clicking on "compare and pull request". 
+                  same than <code>BRANCH_NAME</code>) and clicking on "compare and pull request".
                   <br/><br/><img src="static/images/fork2.png" alt="Fork 2" width="500px"/><br/></li>
                 <li>Create the pull request (the name in the red rectangle should be the same than <code>BRANCH_NAME</code>).
                   <br/><br/><img src="static/images/fork3.png" alt="Fork 3" width="500px"/><br/></li>
