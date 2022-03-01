@@ -120,7 +120,7 @@
 						</div>
 					</div>
 				  <div class="form-group row">
-					<label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin</label>
+					<label for="workOrigDate" class="col-sm-2 col-form-label">Work date of origin as a year (e.g. 1252) or a year range (e.g. 1200-1300)</label>
 					<div class="col-sm-10">
 					  <input type="text" name="workOrigDate" class="form-control-plaintext" id="workOrigDate" placeholder="1080-1100">
 					</div>
@@ -128,7 +128,7 @@
 				  <div class="form-group row">
 					<label for="workOrigPlace" class="col-sm-2 col-form-label">Work place of origin</label>
 					<div class="col-sm-10">
-					  <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy (Rouen?)">
+					  <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy?">
 					</div>
 				  </div>
 				  <div class="form-group row">
@@ -178,6 +178,15 @@
 					  </select>
 					</div>
 				  </div>
+					<div class="form-group row">
+						<label for="drawnStemma" class="col-sm-2 col-form-label">Is the stemma actually drawn (default) or online provided as a prose description?</label>
+						<div class="col-sm-10">
+							<select name="drawnStemma" id="drawnStemma">
+								<option value="true">drawn stemma (default)</option>
+								<option value="false">prose only</option>
+							</select>
+						</div>
+					</div>
 				  <div class="form-group row">
 					<label for="contam" class="col-sm-2 col-form-label">Contamination</label>
 					<div class="col-sm-10">
@@ -206,6 +215,44 @@
 					  </select>
 					</div>
 				  </div>
+					<div class="form-group row">
+						<label for="completeWits" class="col-sm-2 col-form-label">
+							Does the stemma include all witnesses?
+						</label>
+						<div class="col-sm-10">
+							<select name="completeWits" id="completeWits">
+								<option value="included">included (default)</option>
+								<option value="no-descripti">descripti removed</option>
+								<option value="selected">only a selection</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="sourceText" class="col-sm-2 col-form-label">If it is a translation or rewriting,
+						does the stemma include the source text(s) ?
+						</label>
+						<div class="col-sm-10">
+							<select name="sourceText" id="sourceText">
+								<option value="NA">not applicable (default)</option>
+								<option value="included">included</option>
+								<option value="excluded">excluded</option>
+								<option value="selected">only a selection</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="derivatives" class="col-sm-2 col-form-label">Does the stemma include derivatives (when applicable)
+							such as translations, rewritings, … ?
+						</label>
+						<div class="col-sm-10">
+							<select name="derivatives" id="derivatives">
+								<option value="NA">not applicable (default)</option>
+								<option value="included">included</option>
+								<option value="excluded">excluded</option>
+								<option value="selected">only a selection</option>
+							</select>
+						</div>
+					</div>
 					<div class="form-group row">
 						<label for="contributor" class="col-sm-2 col-form-label">Contributor (you)*</label>
 						<div class="col-sm-10">
@@ -323,9 +370,13 @@ workAuthorViaf : "${normalize(data.workAuthorViaf)}"
 workGenre : "${normalize(data.workGenre)}"
 workLangCode : "${normalize(data.workLangCode)}"
 stemmaType : "${normalize(data.stemmaType)}"
+drawnStemma : "${normalize(data.drawnStemma)}"
 contam : "${normalize(data.contam)}"
 extraStemmContam : "${normalize(data.extraStemmContam)}"
 rootType : "${normalize(data.rootType)}"
+completeWits : "${normalize(data.completeWits)}"
+sourceText : "${normalize(data.sourceText)}"
+derivatives : "${normalize(data.derivatives)}"
 contributor : "${normalize(data.contributor)}"
 contributorORCID : "${normalize(data.contributorORCID)}"
 note : "${normalize(data.note)}"
