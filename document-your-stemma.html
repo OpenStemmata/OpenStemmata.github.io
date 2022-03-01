@@ -66,11 +66,19 @@
 					</div>
 				  </div>
 				  <div class="form-group row">
-				  	<label for="publicationPlace" class="col-sm-2 col-form-label">Publication place</label>
-					<div class="col-sm-10">
-						<input type="text" name="publicationPlace" class="form-control-plaintext" id="publicationPlace" placeholder="Woodstock">
+						<label for="publicationPlaces" class="col-sm-2 col-form-label">Publication place(s)</label>
+						<div class="col-sm-10 publicationPlace-row-container">
+							<div class="row place-row" style="padding: 1em;">
+								<div class="col-md-6">
+									<input type="text" name="publicationPlace" class="form-control-plaintext" id="publicationPlace" placeholder="Woodstock">
+								</div>
+								<div class="col-md-6 btns">
+									<button type="button" class="btn btn-success add-place-row">Add another place +</button>
+									<button type="button" class="btn btn-danger  del-place-row invisible">-</button>
+								</div>
+							</div>
+						</div>
 					</div>
-				  </div>
 				  <div class="form-group row">
 				  	<label for="publicationSeries" class="col-sm-2 col-form-label">Publication series</label>
 					<div class="col-sm-10">
@@ -89,12 +97,20 @@
 						<input type="number" name="publicationStemmaNum" class="form-control-plaintext" id="publicationStemmaNum" placeholder="2">
 					</div>
 				  </div>
-				  <div class="form-group row">
-				  	<label for="publicationAuthors" class="col-sm-2 col-form-label">Publication author(s)*</label>
-					<div class="col-sm-10">
-						<input type="text" name="publicationAuthors" class="form-control-plaintext" id="publicationAuthors" placeholder="Ditor, Joe E." required="required">
+					<div class="form-group row">
+						<label for="publicationAuthors" class="col-sm-2 col-form-label">Publication author(s)*</label>
+						<div class="col-sm-10 publicationAuthors-row-container">
+							<div class="row author-row" style="padding: 1em;">
+								<div class="col-md-6">
+									<input type="text" name="publicationAuthor" class="form-control-plaintext" id="publicationAuthor" placeholder="Ditor, Joe E." required="required">
+								</div>
+								<div class="col-md-6 btns">
+									<button type="button" class="btn btn-success add-aut-row">Add another author +</button>
+									<button type="button" class="btn btn-danger  del-aut-row invisible">-</button>
+								</div>
+							</div>
+						</div>
 					</div>
-				  </div>
 				  <div class="form-group row">
 					<label for="publicationPage" class="col-sm-2 col-form-label">Page in edition</label>
 					<div class="col-sm-10">
@@ -131,16 +147,19 @@
 					  <input type="text" name="workOrigPlace" class="form-control-plaintext" id="workOrigPlace" placeholder="Normandy?">
 					</div>
 				  </div>
-				  <div class="form-group row">
-					<label for="workAuthor" class="col-sm-2 col-form-label">Work author</label>
-					<div class="col-sm-10">
-					  <input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
-					</div>
-				  </div>
 					<div class="form-group row">
-						<label for="workAuthorViaf" class="col-sm-2 col-form-label">Work author <a href="https://viaf.org/">VIAF</a> number</label>
-						<div class="col-sm-10">
-							<input type="text" name="workAuthorViaf" class="form-control-plaintext" id="workAuthorViaf" placeholder="87681171">
+						<label for="workAuthors" class="col-sm-2 col-form-label">Work author(s)</label>
+						<div class="col-sm-10 workAuthor-row-container">
+							<div class="row workAuthor-row" style="padding: 1em;">
+								<div class="col-md-6">
+									<input type="text" name="workAuthor" class="form-control-plaintext" id="workAuthor" placeholder="Anonymous">
+									<input type="text" name="workAuthorViaf" class="form-control-plaintext" id="workAuthorViaf" placeholder="Work author VIAF number">
+								</div>
+								<div class="col-md-6 btns">
+									<button type="button" class="btn btn-success add-workAuthor-row">Add another author +</button>
+									<button type="button" class="btn btn-danger  del-workAuthor-row invisible">-</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				  <div class="form-group row">
@@ -265,6 +284,23 @@
 							<input type="text" name="contributorORCID" class="form-control-plaintext" id="contributorORCID" placeholder="0000-0003-0385-7037">
 						</div>
 					</div>
+					
+					<div class="form-group row">
+						<label for="contributors" class="col-sm-2 col-form-label">Contributor(s)</label>
+						<div class="col-sm-10 contributors-row-container">
+							<div class="row contributor-row" style="padding: 1em;">
+								<div class="col-md-6">
+									<input type="text" name="contributor" class="form-control-plaintext" id="contributor" placeholder="Your name" required="required"> 
+									<input type="text" name="contributorORCID" class="form-control-plaintext" id="contributorORCID" placeholder="Your ORCID number">
+								</div>
+								<div class="col-md-6 btns">
+									<button type="button" class="btn btn-success add-contributor-row">Add another contributor +</button>
+									<button type="button" class="btn btn-danger  del-contributor-row invisible">-</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 				  <div class="form-group row">
 					<label for="note" class="col-sm-2 col-form-label">Note</label>
 					<div class="col-sm-10">
@@ -343,6 +379,47 @@
 		};
 
 		witRow.querySelector(".add-row").addEventListener("click", addNode);
+		
+		const autRow = document.querySelector(".author-row"),
+			publicationAuthorsRowContainer = document.querySelector(".publicationAuthors-row-container");
+
+		const addAutNode = function(event) {
+			event.preventDefault();
+			const newAutNode = autRow.cloneNode(true);
+			const hideAut = newAutNode.querySelector(".del-aut-row"),
+				 showAut = newAutNode.querySelector(".add-aut-row");
+
+			hideAut.classList.remove("invisible"); // = "inline";
+			hideAut.addEventListener("click", function(evAut) {
+				newAutNode.remove();
+			});
+			showAut.addEventListener("click", addAutNode);
+
+			publicationAuthorsRowContainer.appendChild(newAutNode);
+		};
+
+		autRow.querySelector(".add-aut-row").addEventListener("click", addAutNode);
+		
+		const placeRow = document.querySelector(".place-row"),
+			publicationPlaceRowContainer = document.querySelector(".publicationPlace-row-container");
+		
+		const addPlaceNode = function(event) {
+			event.preventDefault();
+			const newPlaceNode = placeRow.cloneNode(true);
+			const hidePlace = newPlaceNode.querySelector(".del-place-row"),
+				 showPlace = newPlaceNode.querySelector(".add-place-row");
+
+			hidePlace.classList.remove("invisible"); // = "inline";
+			hidePlace.addEventListener("click", function(evPlace) {
+				newPlaceNode.remove();
+			});
+			showPlace.addEventListener("click", addPlaceNode);
+
+			publicationPlaceRowContainer.appendChild(newPlaceNode);
+		};
+		
+		placeRow.querySelector(".add-place-row").addEventListener("click", addPlaceNode);
+		
 
 		const normalize = function(a_string) {
 			return a_string.replace("'", "’");
@@ -355,10 +432,26 @@
 publicationTitle : "${normalize(data.publicationTitle)}"
 publicationDate : "${normalize(data.publicationDate)}"
 publicationPlace : "${normalize(data.publicationPlace)}"
+publicationPlace:
+`;
+		[...document.querySelectorAll(".place-row")].forEach(function (el) {
+			let publicationPlace = el.querySelector("input[name='publicationPlace']").value
+			output.innerText += `    - publicationPlace: "${publicationPlace}"
+`;
+		});
+output.innerText += `
 publicationSeries : "${normalize(data.publicationSeries)}"
 publicationNum: "${normalize(data.publicationNum)}"
 publicationStemmaNum: "${normalize(data.publicationStemmaNum)}"
 publicationAuthors : "${normalize(data.publicationAuthors)}"
+publicationAuthors:
+`;
+		[...document.querySelectorAll(".aut-row")].forEach(function (el) {
+			let publicationAuthor = el.querySelector("input[name='publicationAuthor']").value
+			output.innerText += `    - publicationAuthor: "${publicationAuthor}"
+`;
+		});
+output.innerText += `
 publicationPage : "${normalize(data.publicationPage)}"
 publicationLink : "${normalize(data.publicationLink)}"
 workTitle : "${normalize(data.workTitle)}"
