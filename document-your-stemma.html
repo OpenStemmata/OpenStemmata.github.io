@@ -157,7 +157,7 @@
 								</div>
 								<div class="col-md-6 btns">
 									<button type="button" class="btn btn-success add-workAuthor-row">Add another author +</button>
-									<button type="button" class="btn btn-danger  del-workAuthor-row invisible">-</button>
+									<button type="button" class="btn btn-danger del-workAuthor-row invisible">-</button>
 								</div>
 							</div>
 						</div>
@@ -273,20 +273,7 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="contributor" class="col-sm-2 col-form-label">Contributor (you)*</label>
-						<div class="col-sm-10">
-							<input type="text" name="contributor" class="form-control-plaintext" id="contributor" placeholder="You name" required="required"> 
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="contributorORCID" class="col-sm-2 col-form-label">Contributor <a href="https://orcid.org/">ORCID</a></label>
-						<div class="col-sm-10">
-							<input type="text" name="contributorORCID" class="form-control-plaintext" id="contributorORCID" placeholder="0000-0003-0385-7037">
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="contributors" class="col-sm-2 col-form-label">Contributor(s)</label>
+						<label for="contributors" class="col-sm-2 col-form-label">Contributor(s)*</label>
 						<div class="col-sm-10 contributors-row-container">
 							<div class="row contributor-row" style="padding: 1em;">
 								<div class="col-md-6">
@@ -420,6 +407,45 @@
 		
 		placeRow.querySelector(".add-place-row").addEventListener("click", addPlaceNode);
 		
+		const workAuthorRow = document.querySelector(".workAuthor-row"),
+			workAuthorRowContainer = document.querySelector(".workAuthor-row-container");
+		
+		const addworkAuthorNode = function(event) {
+			event.preventDefault();
+			const newworkAuthorNode = workAuthorRow.cloneNode(true);
+			const hideworkAuthor = newworkAuthorNode.querySelector(".del-workAuthor-row"),
+				 showworkAuthor = newworkAuthorNode.querySelector(".add-workAuthor-row");
+
+			hideworkAuthor.classList.remove("invisible"); // = "inline";
+			hideworkAuthor.addEventListener("click", function(evworkAuthor) {
+				newworkAuthorNode.remove();
+			});
+			showworkAuthor.addEventListener("click", addworkAuthorNode);
+
+			workAuthorRowContainer.appendChild(newworkAuthorNode);
+		};
+		
+		workAuthorRow.querySelector(".add-workAuthor-row").addEventListener("click", addworkAuthorNode);
+		
+		const contributorRow = document.querySelector(".contributor-row"),
+			contributorRowContainer = document.querySelector(".contributors-row-container");
+
+		const addcontributorNode = function(event) {
+			event.preventDefault();
+			const newcontributorNode = contributorRow.cloneNode(true);
+			const hidecontributor = newcontributorNode.querySelector(".del-contributor-row"),
+				 showcontributor = newcontributorNode.querySelector(".add-contributor-row");
+
+			hidecontributor.classList.remove("invisible"); // = "inline";
+			hidecontributor.addEventListener("click", function(evcontributor) {
+				newcontributorNode.remove();
+			});
+			showcontributor.addEventListener("click", addcontributorNode);
+
+			contributorRowContainer.appendChild(newcontributorNode);
+		};
+
+		contributorRow.querySelector(".add-contributor-row").addEventListener("click", addcontributorNode);
 
 		const normalize = function(a_string) {
 			return a_string.replace("'", "’");
@@ -431,36 +457,39 @@
 			output.innerText = `publicationType : "${normalize(data.publicationType)}"
 publicationTitle : "${normalize(data.publicationTitle)}"
 publicationDate : "${normalize(data.publicationDate)}"
-publicationPlace : "${normalize(data.publicationPlace)}"
-publicationPlace:
+publicationPlaces:
 `;
 		[...document.querySelectorAll(".place-row")].forEach(function (el) {
 			let publicationPlace = el.querySelector("input[name='publicationPlace']").value
-			output.innerText += `    - publicationPlace: "${publicationPlace}"
+			output.innerText += `    - publicationPlace: "${normalize(publicationPlace)}"
 `;
 		});
-output.innerText += `
-publicationSeries : "${normalize(data.publicationSeries)}"
+output.innerText += `publicationSeries : "${normalize(data.publicationSeries)}"
 publicationNum: "${normalize(data.publicationNum)}"
 publicationStemmaNum: "${normalize(data.publicationStemmaNum)}"
-publicationAuthors : "${normalize(data.publicationAuthors)}"
 publicationAuthors:
 `;
-		[...document.querySelectorAll(".aut-row")].forEach(function (el) {
+		[...document.querySelectorAll(".author-row")].forEach(function (el) {
 			let publicationAuthor = el.querySelector("input[name='publicationAuthor']").value
-			output.innerText += `    - publicationAuthor: "${publicationAuthor}"
+			output.innerText += `    - publicationAuthor: "${normalize(publicationAuthor)}"
 `;
 		});
-output.innerText += `
-publicationPage : "${normalize(data.publicationPage)}"
+output.innerText += `publicationPage : "${normalize(data.publicationPage)}"
 publicationLink : "${normalize(data.publicationLink)}"
 workTitle : "${normalize(data.workTitle)}"
 workViaf : "${normalize(data.workViaf)}"
 workOrigDate : "${normalize(data.workOrigDate)}"
 workOrigPlace : "${normalize(data.workOrigPlace)}"
-workAuthor : "${normalize(data.workAuthor)}"
-workAuthorViaf : "${normalize(data.workAuthorViaf)}"
-workGenre : "${normalize(data.workGenre)}"
+workAuthors:
+`;
+		[...document.querySelectorAll(".workAuthor-row")].forEach(function (el) {
+			let workAuthor = el.querySelector("input[name='workAuthor']").value,
+				workAuthorViaf = el.querySelector("input[name='workAuthorViaf']").value;
+			output.innerText += `    - workAuthor: "${normalize(workAuthor)}"
+      workAuthorViaf: "${normalize(workAuthorViaf)}"
+`;
+		});
+output.innerText += `workGenre : "${normalize(data.workGenre)}"
 workLangCode : "${normalize(data.workLangCode)}"
 stemmaType : "${normalize(data.stemmaType)}"
 drawnStemma : "${normalize(data.drawnStemma)}"
@@ -470,9 +499,16 @@ rootType : "${normalize(data.rootType)}"
 completeWits : "${normalize(data.completeWits)}"
 sourceText : "${normalize(data.sourceText)}"
 derivatives : "${normalize(data.derivatives)}"
-contributor : "${normalize(data.contributor)}"
-contributorORCID : "${normalize(data.contributorORCID)}"
-note : "${normalize(data.note)}"
+contributors:
+`;
+		[...document.querySelectorAll(".contributor-row")].forEach(function (el) {
+			let contributor = el.querySelector("input[name='contributor']").value,
+				contributorORCID = el.querySelector("input[name='contributorORCID']").value;
+			output.innerText += `    - contributor: "${normalize(data.contributor)}"
+      contributorORCID: "${normalize(data.contributorORCID)}"
+`;
+		});
+output.innerText += `note : "${normalize(data.note)}"
 wits:
 `;
 		[...document.querySelectorAll(".wit-row")].forEach(function (el) {
@@ -483,13 +519,13 @@ wits:
 				witNotes = el.querySelector("input[name='witNotes']").value,
 				witMsDesc = el.querySelector("input[name='witMsDesc']").value,
 				witDigit = el.querySelector("input[name='witDigit']").value;
-			output.innerText += `    - witSigla: "${witSigla}"
-      witSignature: "${witSignature}"
-      witOrigDate: "${witOrigDate}"
-      witOrigPlace: "${witOrigPlace}"
-      witNotes: "${witNotes}"
-      witMsDesc: "${witMsDesc}"
-      witDigit: "${witDigit}"
+			output.innerText += `    - witSigla: "${normalize(witSigla)}"
+      witSignature: "${normalize(witSignature)}"
+      witOrigDate: "${normalize(witOrigDate)}"
+      witOrigPlace: "${normalize(witOrigPlace)}"
+      witNotes: "${normalize(witNotes)}"
+      witMsDesc: "${normalize(witMsDesc)}"
+      witDigit: "${normalize(witDigit)}"
 `;
 		});
 		output.innerText += "# Great, now copy and paste me in a metadata.txt file for your submission !";
