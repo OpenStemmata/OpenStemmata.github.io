@@ -280,10 +280,44 @@ digraph {
                 <h4>Rarer cases</h4>
                 <div>
                   <h5>Extra-archetypal contamination</h5>
-                  <p>Extra-archetypal (or extra-stemmatic) contamination is the case where a witness is contaminated by a source 
-                    outside of the descendants of the archetype. Some editors indicate it with an arrow coming from the outside, while other simply
-                  indicate it in the text.</p>
-                  <img src="static/images/Ewert_1932_GuiWarewic.png" alt="Stemma from Ewert 1932" width="150"/>
+                  <table style="width:100%">
+                    <tr>
+                      <td>
+                        <img src="static/images/Ewert_1932_GuiWarewic.png" alt="Stemma from Ewert 1932" width="450"/>
+                        (Ewert, 1932, Gui de Warewic)
+                      </td>
+                      <td>
+                        <p>Extra-archetypal (or extra-stemmatic) contamination is the case where a witness is contaminated by a source 
+                          outside of the descendants of the archetype. Some editors indicate it with an arrow coming from the outside, while other simply
+                          indicate it in the text.</p>
+                      </td>
+                    </tr>
+                  </table>
+                  <p>In both cases, it is encoded by added the necesseray missing node 
+                    (i.e., the original and the witness outside the tree from which the contamination, with no label,
+                    and indicating the necessary contaminations.</p> 
+                  <table style="width:100%">
+                    <tr>
+                      <td>Extra-archetypal <br/>contamination</td>
+                      <td>
+                        <pre><code>
+digraph {
+    original[color=grey, label=""]
+    source[color="grey", label=""]
+    x[color="grey"];
+
+    original->source;
+    source->A[style="dashed"];
+    original->x;
+    x->A;
+    x->B;
+}
+                    </code></pre>
+                      </td>
+                      <td><img src="static/images/Guidelines_rule8.png" alt="extra-archetypal contamination encoding" width="150"/></td>
+                    </tr>
+                  </table>
+                  
                 </div>
               </div>
             </div>
